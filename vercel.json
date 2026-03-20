@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "redirects": [
+    {"source": "/resume", "destination": "https://rigor-resume.vercel.app", "permanent": true},
+    {"source": "/cover", "destination": "https://rigor-cover.vercel.app", "permanent": true},
+    {"source": "/linkedin", "destination": "https://rigor-linkedin.vercel.app", "permanent": true},
+    {"source": "/interview", "destination": "https://rigor-interview.vercel.app", "permanent": true},
+    {"source": "/salary", "destination": "https://rigor-salary.vercel.app", "permanent": true},
+    {"source": "/portfolio", "destination": "https://rigor-portfolio.vercel.app", "permanent": true},
+    {"source": "/networking", "destination": "https://rigor-networking.vercel.app", "permanent": true}
+  ]
+}
