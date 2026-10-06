@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rigor - Professional Career Tools</title>
+    <meta name="description" content="Seven AI-powered career tools: resume ATS analysis, cover letters, LinkedIn optimization, interview prep, salary negotiation, portfolio review, and networking emails.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -19,10 +20,10 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1rem;
         }
         h1 {
-            font-size: 4rem;
+            font-size: clamp(2.75rem, 12vw, 4rem);
             font-weight: 700;
             background: linear-gradient(135deg, #3b82f6, #06b6d4);
             -webkit-background-clip: text;
@@ -31,27 +32,36 @@
         }
         .tagline {
             font-size: 1.3rem;
-            color: #64748b;
+            color: #94a3b8; /* was #64748b (4.2:1); now 7.7:1 on #0a0a0a */
             margin-bottom: 3rem;
         }
+        /* Flex-wrap (not auto-fit grid) so the 7th card is centred instead of orphaned
+           at the left, and cards shrink to the viewport on phones (the old 300px
+           minimum + 2rem padding overflowed anything narrower than ~430px). */
         .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 1.5rem;
+            width: 100%;
             max-width: 1000px;
-            padding: 0 2rem;
         }
         .tool-card {
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
             border: 1px solid rgba(59, 130, 246, 0.2);
             border-radius: 12px;
             padding: 2rem;
+            flex: 1 1 280px;
+            max-width: 310px;
+            min-width: 0;
+            text-align: left;
             transition: all 0.3s;
-            cursor: pointer;
             text-decoration: none;
             color: inherit;
         }
-        .tool-card:hover {
+        /* Only real links get the pointer + hover lift */
+        a.tool-card { cursor: pointer; }
+        a.tool-card:hover {
             transform: translateY(-3px);
             border-color: #3b82f6;
             box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15);
@@ -69,6 +79,7 @@
         }
         .status-live { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
         .status-soon { background: rgba(234, 179, 8, 0.2); color: #eab308; }
+        .status-beta { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; }
         .cta {
             margin-top: 3rem;
             padding: 1rem 3rem;
@@ -85,8 +96,8 @@
         .cta:hover { transform: scale(1.05); }
         footer {
             text-align: center;
-            padding: 3rem;
-            color: #475569;
+            padding: 3rem 1rem;
+            color: #94a3b8; /* was #475569 (2.6:1) */
         }
         footer a { color: #3b82f6; text-decoration: none; }
     </style>
@@ -97,50 +108,57 @@
         <p class="tagline">Professional tools to accelerate your career</p>
         
         <div class="tools-grid">
-            <a href="https://resume-analyzer.vercel.app" class="tool-card">
+            <a href="https://resume.rigor.design" class="tool-card">
                 <div class="tool-icon">&#128196;</div>
                 <h3>Resume Analyzer</h3>
                 <p>Get your ATS score and optimize your resume for applicant tracking systems.</p>
-                <span class="status status-live">Live</span>
+                <span class="status status-beta">Beta</span>
             </a>
-            
-            <div class="tool-card">
+
+            <a href="https://cover.rigor.design" class="tool-card">
                 <div class="tool-icon">&#9993;</div>
                 <h3>Cover Letter Generator</h3>
                 <p>Create compelling, personalized cover letters in seconds.</p>
-                <span class="status status-soon">Coming Soon</span>
-            </div>
-            
-            <div class="tool-card">
+                <span class="status status-beta">Beta</span>
+            </a>
+
+            <a href="https://linkedin.rigor.design" class="tool-card">
                 <div class="tool-icon">&#128101;</div>
                 <h3>LinkedIn Optimizer</h3>
                 <p>Maximize your LinkedIn profile visibility and engagement.</p>
-                <span class="status status-soon">Coming Soon</span>
-            </div>
-            
-            <div class="tool-card">
+                <span class="status status-beta">Beta</span>
+            </a>
+
+            <a href="https://interview.rigor.design" class="tool-card">
                 <div class="tool-icon">&#127908;</div>
                 <h3>Interview Prep Coach</h3>
                 <p>Practice with AI-powered mock interviews and get feedback.</p>
-                <span class="status status-soon">Coming Soon</span>
-            </div>
-            
-            <div class="tool-card">
+                <span class="status status-beta">Beta</span>
+            </a>
+
+            <a href="https://salary.rigor.design" class="tool-card">
                 <div class="tool-icon">&#128176;</div>
                 <h3>Salary Negotiator</h3>
                 <p>Research market rates and craft your negotiation strategy.</p>
-                <span class="status status-soon">Coming Soon</span>
-            </div>
-            
-            <div class="tool-card">
+                <span class="status status-beta">Beta</span>
+            </a>
+
+            <a href="https://portfolio.rigor.design" class="tool-card">
                 <div class="tool-icon">&#128188;</div>
                 <h3>Portfolio Review</h3>
                 <p>Get AI feedback on your professional portfolio.</p>
-                <span class="status status-soon">Coming Soon</span>
-            </div>
+                <span class="status status-beta">Beta</span>
+            </a>
+
+            <a href="https://networking.rigor.design" class="tool-card">
+                <div class="tool-icon">&#128231;</div>
+                <h3>Networking Email Generator</h3>
+                <p>Craft cold outreach, coffee chats, referrals, and follow-ups that get replies.</p>
+                <span class="status status-beta">Beta</span>
+            </a>
         </div>
-        
-        <a href="https://resume-analyzer.vercel.app" class="cta">Analyze Your Resume Free</a>
+
+        <a href="https://resume.rigor.design" class="cta">Analyze Your Resume Free</a>
     </section>
     
     <footer>
