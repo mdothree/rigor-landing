@@ -56,6 +56,11 @@
       "source": "/pricing",
       "destination": "/",
       "permanent": false
+    },
+    {
+      "source": "/contact",
+      "destination": "https://mdo3d.com/contact",
+      "permanent": false
     }
   ],
   "headers": [
