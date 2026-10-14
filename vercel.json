@@ -46,6 +46,16 @@
       "source": "/networking",
       "destination": "https://networking.rigor.design",
       "permanent": true
+    },
+    {
+      "source": "/refund-policy",
+      "destination": "https://mdo3d.com/refund",
+      "permanent": false
+    },
+    {
+      "source": "/pricing",
+      "destination": "/",
+      "permanent": false
     }
   ],
   "headers": [
