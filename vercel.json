@@ -66,6 +66,22 @@
       "source": "/contact",
       "destination": "https://mdo3d.com/contact",
       "permanent": false
+    },
+    {
+      "source": "/refunds",
+      "destination": "https://mdo3d.com/refund",
+      "permanent": false
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.rigorcareer.com"
+        }
+      ],
+      "destination": "https://rigorcareer.com/:path*",
+      "permanent": true
     }
   ],
   "headers": [
