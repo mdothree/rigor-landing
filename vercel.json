@@ -83,6 +83,17 @@
       "permanent": false
     },
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.rigorcareer.com"
+        }
+      ],
+      "destination": "https://rigorcareer.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
