@@ -68,6 +68,16 @@
       "permanent": false
     },
     {
+      "source": "/status",
+      "destination": "/#status",
+      "permanent": false
+    },
+    {
+      "source": "/tools",
+      "destination": "/#tools",
+      "permanent": false
+    },
+    {
       "source": "/refunds",
       "destination": "https://mdo3d.com/refund",
       "permanent": false

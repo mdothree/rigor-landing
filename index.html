@@ -57,6 +57,10 @@ a{color:inherit}
 .hdr{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px;border-bottom:1px solid var(--rule)}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--ui);font-weight:700;font-size:19px;letter-spacing:-.02em}
 .brand-mark{width:26px;height:26px;border:1.5px solid var(--accent);border-radius:2px;display:grid;place-items:center;color:var(--accent);font:700 14px/1 var(--ui)}
+.hdr{position:relative}
+.menu{display:contents}
+.menu-btn{display:none;font:600 12.5px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--fg);background:transparent;border:1px solid var(--rule-strong);border-radius:var(--r);padding:0 14px;min-height:44px;cursor:pointer}
+.menu-btn:hover{border-color:var(--accent)}
 .hdr nav{display:flex;align-items:center;gap:28px;font-family:var(--ui);font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 .hdr nav a{text-decoration:none;color:var(--fg)}
 .hdr nav a:hover{color:var(--accent)}
@@ -124,7 +128,12 @@ footer a:hover{color:var(--fg)}
   .sec-hd{grid-template-columns:1fr;gap:12px}
 }
 @media (max-width:640px){
-  .hdr nav a.opt{display:none}
+  .hdr nav{gap:10px}
+  .menu-btn{display:inline-block}
+  .menu{display:none;position:absolute;left:calc(-1 * var(--g));right:calc(-1 * var(--g));top:72px;z-index:20;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--rule);padding:6px var(--g) 12px}
+  .menu.open{display:flex}
+  .menu a.opt{display:block;padding:14px 0;border-top:1px solid var(--rule)}
+  .menu a.opt:first-child{border-top:0}
   .hero h1{font-size:44px}
   .lead{font-size:20px}
   .sec{padding-top:56px;padding-bottom:24px}
@@ -140,6 +149,7 @@ footer a:hover{color:var(--fg)}
     </style>
 <style>.skip-link{position:absolute;left:-9999px;top:8px;z-index:10000;padding:8px 16px;background:#E2B13C;color:#0E0D0C;font-weight:600;text-decoration:none;border-radius:3px;font-family:system-ui,sans-serif}.skip-link:focus{left:8px;top:8px}</style>
   <script src="/js/consent.js" defer></script>
+  <script src="/js/nav.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -147,9 +157,12 @@ footer a:hover{color:var(--fg)}
   <div class="hdr">
     <a class="brand" href="/" aria-label="Rigor, home"><span class="brand-mark" aria-hidden="true">R</span>Rigor</a>
     <nav aria-label="Main">
-      <a class="opt" href="#tools">Tools</a>
-      <a class="opt" href="#status">Status</a>
-      <a class="opt" href="https://mdo3d.com">MDO3D</a>
+      <div class="menu" id="site-menu">
+        <a class="opt" href="#tools">Tools</a>
+        <a class="opt" href="#status">Status</a>
+        <a class="opt" href="https://mdo3d.com">MDO3D</a>
+      </div>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
       <a class="btn" href="https://resume.rigorcareer.com">Check a resume</a>
     </nav>
   </div>
