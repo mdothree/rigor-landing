@@ -68,7 +68,7 @@ a{color:inherit}
 .btn:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
 .btn.ghost{background:transparent;color:var(--fg);border-color:var(--rule-strong)}
 .btn.ghost:hover{border-color:var(--fg)}
-.hdr .btn{min-height:38px;padding:0 14px;font-size:13.5px;color:var(--on-accent)}
+.hdr .btn{min-height:44px;padding:0 14px;font-size:13.5px;color:var(--on-accent)}
 .hdr .btn:hover{color:var(--on-accent)}
 
 .hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:64px;align-items:end;padding:96px 0 72px;border-bottom:1px solid var(--rule)}
@@ -116,6 +116,10 @@ figcaption{font-family:var(--ui);font-size:13px;color:var(--mute);margin-top:10p
 footer .ftr{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding:28px 0 48px;margin-top:72px;border-top:1px solid var(--rule);font-family:var(--ui);font-size:13.5px;color:var(--mute)}
 footer a{color:var(--mute);text-underline-offset:2px}
 footer a:hover{color:var(--fg)}
+footer .ftr a{display:inline-block;min-height:44px;min-width:44px;text-align:center;line-height:44px;padding:0 4px}
+footer .ftr{align-items:center}
+@media (min-width:641px){.hdr nav a:not(.btn){display:inline-flex;align-items:center;min-height:44px}}
+.brand{min-height:44px}
 
 @media (max-width:1040px){
   .row{grid-template-columns:44px minmax(0,1fr) minmax(0,1.2fr);row-gap:10px}
